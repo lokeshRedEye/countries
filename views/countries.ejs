@@ -9,27 +9,27 @@
             background-color: #121212;
             color: #e0e0e0;
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             padding: 0;
         }
 
         header {
             background-color: #1f1f1f;
             color: #4CAF50;
-            padding: 1.5rem;
+            padding: 2rem;
             text-align: center;
             border-bottom: 1px solid #333;
         }
 
         h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
 
         .container {
             max-width: 900px;
             margin: 2rem auto;
-            padding: 2rem;
+            padding: 2.5rem;
             background-color: #1f1f1f;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
@@ -44,13 +44,13 @@
         .flag-container img {
             width: 100%;
             height: auto;
-            max-width: 400px;
+            max-width: 500px;
         }
 
         .detail {
-            font-size: 1.4rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            line-height: 2;
+            margin-bottom: 2rem;
         }
 
         .detail strong {
@@ -69,7 +69,7 @@
 
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             background-color: #1f1f1f;
             color: #e0e0e0;
             border-top: 1px solid #333;
@@ -77,37 +77,65 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                font-size: 2rem;
+            }
+
+            header {
+                padding: 2.5rem;
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+
             .container {
-                padding: 1rem;
+                padding: 3rem;
             }
 
             .flag-container img {
-                max-width: 300px;
+                max-width: 600px;
+            }
+
+            .detail {
+                font-size: 2.2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            footer {
+                padding: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header class="text-center py-3 bg-dark text-success">
+    <header class="text-center py-4 bg-dark text-success">
         <h1>Country Details</h1>
     </header>
-    <div class="container bg-dark text-light shadow-lg rounded p-4 my-4">
-        <div class="flag-container mb-4">
-            <img src="<%= countryDetails.flag_png %>" alt="Flag" class="img-fluid rounded">
+    <div class="container bg-dark text-light shadow-lg rounded p-5 my-5">
+        <div class="row flag-container mb-5">
+            <div class="col-12" style="display: flex; justify-content: center;">
+                <img src="<%= countryDetails.flag_png %>" alt="Flag" class="img-fluid rounded">
+            </div>
         </div>
-        <div class="detail"><strong>Common Name:</strong> <%= countryDetails.common_name %></div>
-        <div class="detail"><strong>Official Name:</strong> <%= countryDetails.official_name %></div>
-        <div class="detail"><strong>Currency Code:</strong> <%= countryDetails.currencyCode %></div>
-        <div class="detail"><strong>Currency Name:</strong> <%= countryDetails.currencyName %></div>
-        <div class="detail"><strong>Capital:</strong> <%= countryDetails.capital %></div>
-        <div class="detail"><strong>Alternate Spellings:</strong> <%= countryDetails.alt_spellings.join(', ') %></div>
-        <div class="detail"><strong>Continent:</strong> <%= countryDetails.continent %></div>
-        <div class="detail"><strong>Languages:</strong> <%= Object.values(countryDetails.languages).join(', ') %></div>
-        <div class="detail"><strong>Population:</strong> <%= countryDetails.population %></div>
-        <div class="detail"><strong>Map:</strong> <a href="<%= countryDetails.map_url %>" target="_blank">Google Maps</a></div>
+        <div class="row">
+            <div class="col-12 detail"><strong>Common Name:</strong> <%= countryDetails.common_name %></div>
+            <div class="col-12 detail"><strong>Official Name:</strong> <%= countryDetails.official_name %></div>
+            <div class="col-12 detail"><strong>Currency Code:</strong> <%= countryDetails.currencyCode %></div>
+            <div class="col-12 detail"><strong>Currency Name:</strong> <%= countryDetails.currencyName %></div>
+            <div class="col-12 detail"><strong>Capital:</strong> <%= countryDetails.capital %></div>
+            <div class="col-12 detail"><strong>Alternate Spellings:</strong> <%= countryDetails.alt_spellings.join(', ') %></div>
+            <div class="col-12 detail"><strong>Continent:</strong> <%= countryDetails.continent %></div>
+            <div class="col-12 detail"><strong>Languages:</strong> <%= Object.values(countryDetails.languages).join(', ') %></div>
+            <div class="col-12 detail"><strong>Population:</strong> <%= countryDetails.population %></div>
+            <div class="col-12 detail"><strong>Map:</strong> <a href="<%= countryDetails.map_url %>" target="_blank">Google Maps</a></div>
+        </div>
     </div>
-    <footer class="text-center py-3 bg-dark text-light border-top border-secondary mt-4">
+    <footer class="text-center py-4 bg-dark text-light border-top border-secondary mt-5">
         <p>&copy; 2024 Country Details</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
