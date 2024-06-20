@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            font-size: 1.2rem;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            color: #4CAF50;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #1f1f1f;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        .flag-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .flag-container img {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+        }
+
+        .detail {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail strong {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .flag-container img {
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center py-3 bg-dark text-success">
+        <h1>Country Details</h1>
+    </header>
+    <div class="container bg-dark text-light shadow-lg rounded p-4 my-4">
+        <div class="flag-container mb-4">
+            <img src="<%= countryDetails.flag_png %>" alt="Flag" class="img-fluid rounded">
+        </div>
+        <div class="detail"><strong>Common Name:</strong> <%= countryDetails.common_name %></div>
+        <div class="detail"><strong>Official Name:</strong> <%= countryDetails.official_name %></div>
+        <div class="detail"><strong>Currency Code:</strong> <%= countryDetails.currencyCode %></div>
+        <div class="detail"><strong>Currency Name:</strong> <%= countryDetails.currencyName %></div>
+        <div class="detail"><strong>Capital:</strong> <%= countryDetails.capital %></div>
+        <div class="detail"><strong>Alternate Spellings:</strong> <%= countryDetails.alt_spellings.join(', ') %></div>
+        <div class="detail"><strong>Continent:</strong> <%= countryDetails.continent %></div>
+        <div class="detail"><strong>Languages:</strong> <%= Object.values(countryDetails.languages).join(', ') %></div>
+        <div class="detail"><strong>Population:</strong> <%= countryDetails.population %></div>
+        <div class="detail"><strong>Map:</strong> <a href="<%= countryDetails.map_url %>" target="_blank">Google Maps</a></div>
+    </div>
+    <footer class="text-center py-3 bg-dark text-light border-top border-secondary mt-4">
+        <p>&copy; 2024 Country Details</p>
+    </footer>
+</body>
+</html>

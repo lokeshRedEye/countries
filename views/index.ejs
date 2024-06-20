@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://i.natgeofe.com/k/05fcf5e6-634f-46c3-bce8-605f1c84c947/1900x1068_herolead_countries_16x9.jpg");
+            color: #e0e0e0;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            opacity: 0.75;
+            padding: 2rem;
+            background-color: black;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #69c86c;
+            border-radius: 4px;
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+        }
+
+        button {
+            padding: 0.5rem 2rem;
+            background-color: #18db1f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #19d823;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 1rem;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            img {
+                width: 80px;
+                
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/search" method="post">
+            <img src="silo1.png" alt="Silo Image">
+            <h1>Silo Countries Search</h1>
+            <input type="text" name="country" placeholder="Enter country name">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
